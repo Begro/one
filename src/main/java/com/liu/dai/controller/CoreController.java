@@ -82,7 +82,7 @@ public class CoreController {
         try {
             StringBuilder result = new StringBuilder();
             br = httpServletRequest.getReader();
-            for (String line = null; (line = br.readLine()) != null; ) {
+            for (String line; (line = br.readLine()) != null; ) {
                 result.append(line).append("\n");
             }
             return result.toString();

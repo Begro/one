@@ -18,15 +18,15 @@ public class WxExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(BussinessException.class)
     @ResponseBody
-    BaseResult handleBadParameterException(HttpServletRequest httpServletRequest, BussinessException exception) {
-        return handleExceptionInternal(exception);
+    void handlerException(BussinessException exception) {
+        handleExceptionInternal(exception);
     }
 
-    private BaseResult handleExceptionInternal(BussinessException exception) {
+    private void handleExceptionInternal(BussinessException exception) {
         log.error(exception.getMessage(), exception);
-        BaseResult baseResult = new BaseResult();
-        baseResult.setErrcode(exception.getErrorCode());
-        baseResult.setErrmsg(exception.getMessage());
-        return baseResult;
+//        BaseResult baseResult = new BaseResult();
+//        baseResult.setErrcode(exception.getErrorCode());
+//        baseResult.setErrmsg(exception.getMessage());
+//        return baseResult;
     }
 }

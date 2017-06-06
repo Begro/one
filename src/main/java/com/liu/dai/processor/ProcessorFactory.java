@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.liu.dai.entity.event.QrCodeEvent;
 import com.liu.dai.entity.event.SubscribeEvent;
 import com.liu.dai.entity.in.BaseInMsg;
+import com.liu.dai.entity.in.InTextMsg;
 import com.liu.dai.exception.BussinessException;
 
 /**
@@ -20,6 +21,8 @@ public class ProcessorFactory {
             return new QrEventProcessor();
         } else if (inMsg instanceof SubscribeEvent) {
             return new SubscribeProcessor();
+        } else if (inMsg instanceof InTextMsg) {
+            return new TextProcessor();
         } else {
             throw new BussinessException.UnKnowMsgTypeError();
         }

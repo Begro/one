@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.liu.dai.entity.event.*;
 import com.liu.dai.entity.in.BaseInMsg;
+import com.liu.dai.entity.in.InTextMsg;
 import com.liu.dai.entity.in.MsgType;
 
 /**
@@ -29,9 +30,20 @@ public class InMsgParse {
         String msgType = xmlHelper.getString("//MsgType");
         if (MsgType.事件.getCode().equalsIgnoreCase(msgType)) {
             return parseEvent(xmlHelper, toUserName, fromUserName, createTime, msgType);
+        } else if (MsgType.文本.getCode().equalsIgnoreCase(msgType)) {
+            return parseText(xmlHelper, toUserName, fromUserName, createTime, msgType);
         } else {
             return null;
         }
+    }
+
+    private static BaseInMsg parseText(XmlHelper xmlHelper, String toUserName, String fromUserName, Integer createTime, String msgType) {
+        String msgId = xmlHelper.getString("//MsgId");
+        String content = xmlHelper.getString("//Content");
+        InTextMsg inTextMsg = new InTextMsg(toUserName, fromUserName, createTime, msgType);
+        inTextMsg.setContent(content);
+        inTextMsg.setMsgId(msgId);
+        return inTextMsg;
     }
 
     private static BaseInMsg parseEvent(XmlHelper xmlHelper, String toUserName, String fromUserName, Integer createTime, String msgType) {

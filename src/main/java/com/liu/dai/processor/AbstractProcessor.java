@@ -2,6 +2,7 @@ package com.liu.dai.processor;
 
 import com.google.common.base.Preconditions;
 import com.liu.dai.entity.out.BaseOutMsg;
+import com.liu.dai.entity.out.TextMsg;
 import com.liu.dai.exception.BussinessException;
 
 import javax.servlet.http.HttpServletResponse;
@@ -32,4 +33,5 @@ public abstract class AbstractProcessor {
                 writer.close();
         }
     }
+
 }

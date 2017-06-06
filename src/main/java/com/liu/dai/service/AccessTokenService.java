@@ -44,7 +44,7 @@ public class AccessTokenService {
     }
 
     private static String createExpensiveGraph(String key) {
-        return null;
+        return "";
     }
 
 
@@ -56,7 +56,7 @@ public class AccessTokenService {
                 String secret = weixinProperty.getSecret();
                 String url = String.format(WeixinApi.ACDESS_TOKEN, appid, secret);
                 AccessToken token = restTemplate.postForObject(url, null, AccessToken.class);
-                Preconditions.checkArgument(Strings.isNullOrEmpty(token.getAccess_token()), token.getErrmsg());
+                Preconditions.checkArgument(!Strings.isNullOrEmpty(token.getAccess_token()), token.getErrmsg());
                 accessToken = token.getAccess_token();
                 tokenCache.put(CACHE_KEY, accessToken);
             }

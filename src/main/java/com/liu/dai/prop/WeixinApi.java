@@ -6,4 +6,6 @@ package com.liu.dai.prop;
 public interface WeixinApi {
 
     public static final String ACDESS_TOKEN = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s";
+
+    public static final String CREATE_MENU = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s";
 }

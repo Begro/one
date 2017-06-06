@@ -12,4 +12,8 @@ import lombok.Setter;
 @Getter
 public final class ViewButton extends Button {
     private String url;
+
+    public ViewButton() {
+        this.type = "view";
+    }
 }

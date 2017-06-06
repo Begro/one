@@ -11,6 +11,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Button {
-    private String name;
-    private String type;
+    protected String name;
+    protected String type;
 }

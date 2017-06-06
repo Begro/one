@@ -12,4 +12,8 @@ import lombok.Setter;
 @Setter
 public final class MediaButton extends Button {
     private String media_id;
+
+    public MediaButton() {
+        this.type = "media_id";
+    }
 }

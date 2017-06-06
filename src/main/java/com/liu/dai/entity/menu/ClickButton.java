@@ -12,4 +12,8 @@ import lombok.Setter;
 @Setter
 public final class ClickButton extends Button {
     private String key;
+
+    public ClickButton() {
+        this.type = "click";
+    }
 }

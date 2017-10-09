@@ -1,29 +1,22 @@
 package com.liu.dai.controller;
 
-import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import com.liu.dai.entity.event.QrCodeEvent;
 import com.liu.dai.entity.in.BaseInMsg;
-import com.liu.dai.entity.in.MsgType;
 import com.liu.dai.exception.BussinessException;
 import com.liu.dai.processor.ProcessorFactory;
 import com.liu.dai.prop.WeixinProperty;
 import com.liu.dai.util.InMsgParse;
-import com.liu.dai.weixin.AesException;
-import com.liu.dai.weixin.WXBizMsgCrypt;
-import com.thoughtworks.xstream.XStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by liuyan9 on 2017/5/31.

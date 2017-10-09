@@ -2,12 +2,10 @@ package com.liu.dai.processor;
 
 import com.google.common.base.Preconditions;
 import com.liu.dai.entity.out.BaseOutMsg;
-import com.liu.dai.entity.out.TextMsg;
 import com.liu.dai.exception.BussinessException;
-
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by liuyan9 on 2017/6/6.

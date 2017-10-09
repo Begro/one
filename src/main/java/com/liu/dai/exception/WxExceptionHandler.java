@@ -1,13 +1,10 @@
 package com.liu.dai.exception;
 
-import com.liu.dai.entity.BaseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by liuyan9 on 2017/6/5.
